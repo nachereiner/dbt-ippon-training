@@ -1,0 +1,21 @@
+version: 2
+
+sources:
+  - name: restaurants
+    database: DB_DBT_NACHEREINER_DEV  
+    schema: SOURCE  
+    tables:
+      - name: RESTAURANTS
+        description: This table contains the restaurants
+      - name: ORDERS
+        description: This table contains the orders
+        columns:
+        - name: identifier
+          tests:
+            - unique:
+                config:
+                    severity: warn
+            - not_null
+      - name: DISHES
+      - name: FUZZY_ORDERS
+      

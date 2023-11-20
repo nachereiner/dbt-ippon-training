@@ -1,0 +1,1 @@
+select * from {{ source('restaurants', 'RESTAURANTS') }}

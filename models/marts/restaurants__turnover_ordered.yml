@@ -1,0 +1,12 @@
+version: 2
+
+models:
+  - name: restaurants__turnover_ordered
+    description: oui
+    columns:
+      - name: name
+        tests:
+          - unique
+      - name: turnover  
+        tests:  
+          - is_positive
