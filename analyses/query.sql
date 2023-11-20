@@ -7,9 +7,11 @@ select distinct payment_method from {{ source('restaurants', 'ORDERS') }}
 {% endif %}
 
 select
+    name,
     {% for payment_method in payment_methods %}
     sum(case when payment_method = '{{payment_method}}' then amount end) as {{payment_method}}_amount 
     {{ "," if not loop.last }}
     {% endfor %}
-from {{ ref("base_orders") }}
+from {{ ref("stg_restaurants__turnover") }}
+group by name
 
