@@ -5,7 +5,7 @@
 
         {{ default_schema }}
 
-    {%- else if custom_schema_name is not none and target.name.lower() == 'prod' -%}
+    {%- elif custom_schema_name is not none and target.name.lower() == 'prod' -%}
 
         {{ custom_schema_name }}
 
