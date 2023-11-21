@@ -1,3 +1,9 @@
+{{
+    config(
+        materialized='incremental'
+    )
+}}
+
 select name, sum(amount) as turnover
 from {{ ref("stg_restaurants__turnover") }}
 group by name
