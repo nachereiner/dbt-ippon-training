@@ -3,10 +3,13 @@ version: 2
 models:
   - name: restaurants__turnover_ordered
     description: oui
+    tests:
+      - dbt_utils.equality:
+          compare_model: ref('restaurants_expect')
     columns:
       - name: name
         tests:
           - unique
-      - name: turnover  
-        tests:  
+      - name: turnover
+        tests:
           - is_positive

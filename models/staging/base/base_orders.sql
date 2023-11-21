@@ -1,1 +1,1 @@
-select distinct identifier, * from {{ source('restaurants', 'ORDERS') }}
+select distinct identifier, * from {{ mockable_source('restaurants', 'ORDERS', 'sample_orders') }}
