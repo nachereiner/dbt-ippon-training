@@ -1,0 +1,1 @@
+select distinct identifier, * from {{ mockable_source('restaurants', 'ORDERS', 'sample_orders') }}

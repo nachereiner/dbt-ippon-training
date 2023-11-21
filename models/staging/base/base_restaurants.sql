@@ -1,0 +1,1 @@
+select * from {{ mockable_source('restaurants', 'RESTAURANTS', 'sample_restaurants') }}
