@@ -2,7 +2,6 @@ version: 2
 
 sources:
   - name: restaurants
-    database: DB_DBT_NACHEREINER_DEV  
     schema: SOURCE  
     tables:
       - name: RESTAURANTS
